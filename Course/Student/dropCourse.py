@@ -50,7 +50,7 @@ class DropCourse(QWidget):
         if self.msg.text() != '':
             self.centerLayout.removeWidget(self.msg)
 
-        if self.rownum >= 0 and self.showtable is not None:
+        if self.rownum > 0 and self.showtable is not None:
             self.centerLayout.removeWidget(self.showtable)
             sip.delete(self.showtable)
             self.centerLayout.removeWidget(self.bottom)

@@ -154,7 +154,7 @@ class SearchCourse(QWidget):
         self.rbtns = []
         for i in range(self.rownum):
             for j in range(0, 5):
-                self.showtable.setItem(i, j, QtWidgets.QTableWidgetItem(data[i][j-1]))
+                self.showtable.setItem(i, j, QtWidgets.QTableWidgetItem(data[i][j]))
         
         #设置水平方向表格为自适应的伸缩模式
         self.showtable.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
