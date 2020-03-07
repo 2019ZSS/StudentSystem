@@ -53,8 +53,11 @@ def searchCourse(xq, cnum=None, cname=None, tname=None, ctime=None):
 def selectCourse(usr, xq, kh, gh):
     '''
     选课
-    尚未判断选课冲突的情况(待补充)
+    return: True / False
     '''
+    res = searchOnE(0, 0, 1, 0, xh=usr, xq=xq, kh=kh)
+    if len(res):
+        return False
     time1 = searchOnO(0, 0, 0, 1, xq=xq, kh=kh, gh=gh)[0][0]
     res = searchOnE(0, 0, 1, 1, xh=usr, xq=xq)
     for x in res:
@@ -158,6 +161,9 @@ def delOpenCourse(xq, kh, gh, sksj):
     删除已经开设的课程
     '''
     sql = "SET FOREIGN_KEY_CHECKS=0"
+    op_mysql(sql)
+    
+    sql = "delete from e where xq = '%s' and gh = '%s' and kh = '%s'" % (xq, gh, kh)
     op_mysql(sql)
     
     sql = "delete from o where xq = '%s' and kh = '%s' and gh = '%s' and   sksj = '%s'" % (xq, kh, gh, sksj)
