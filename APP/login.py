@@ -42,7 +42,7 @@ class LoginWindow(QWidget):
         logolbl.setPixmap(logomap)
         logolbl.setScaledContents(True) # 图片自适应标签大小
 
-        title = QLabel('学生选课成绩管理系统')
+        title = QLabel('学生课程成绩管理系统')
         title.setAlignment(Qt.AlignCenter) # 设置中间对其
         title.setFont(QFont("Microsoft YaHei", 15)) 
 

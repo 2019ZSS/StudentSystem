@@ -127,7 +127,7 @@ class MainWindow(QMainWindow):
         self.resize(450, 300)
         center(self)
         self.setFont(QFont("Microsoft YaHei", 11))
-        self.setWindowTitle('学生选课成绩管理系统')
+        self.setWindowTitle('学生课程成绩管理系统')
         self.setWindowIcon(QIcon('./image/j1.png'))
         
         self.bottomlbl = QLabel()
